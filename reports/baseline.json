@@ -1,0 +1,161 @@
+{
+  "seed": 42,
+  "python": "3.12.15",
+  "sklearn": "1.8.0",
+  "audit": {
+    "raw_rows": 132373,
+    "source_sha256": "821fb0bf9f7230b0fba4e4f9fadd75a66d1a9ff0b1657810791d33007eb2ab38",
+    "invalid_or_short_removed": 546,
+    "conflicting_text_groups": 35,
+    "conflicting_rows_removed": 293,
+    "duplicate_rows_removed": 2436,
+    "retained_rows": 129098,
+    "negative_rate": 0.262815845326806
+  },
+  "target": "1 = rating 1 or 2; 0 = rating 3, 4 or 5; proxy from stars, not human sentiment labels",
+  "features": "review title and body only; TF-IDF fit on train only",
+  "split": {
+    "train": {
+      "rows": 90870,
+      "first_day": "2018-01-01",
+      "last_day": "2018-04-16",
+      "negative_rate": 0.2584901507648289
+    },
+    "validation": {
+      "rows": 19682,
+      "first_day": "2018-04-17",
+      "last_day": "2018-05-07",
+      "negative_rate": 0.26099989838431054
+    },
+    "test": {
+      "rows": 18546,
+      "first_day": "2018-05-08",
+      "last_day": "2018-05-31",
+      "negative_rate": 0.28593766849994606
+    }
+  },
+  "validation": {
+    "threshold": 0.6249999999999999,
+    "classification": {
+      "0": {
+        "precision": 0.9705717488789237,
+        "recall": 0.9523547610862839,
+        "f1-score": 0.9613769649859458,
+        "support": 14545.0
+      },
+      "1": {
+        "precision": 0.8719038817005546,
+        "recall": 0.9182402180260852,
+        "f1-score": 0.8944723618090452,
+        "support": 5137.0
+      },
+      "accuracy": 0.9434508688141449,
+      "macro avg": {
+        "precision": 0.9212378152897391,
+        "recall": 0.9352974895561845,
+        "f1-score": 0.9279246633974956,
+        "support": 19682.0
+      },
+      "weighted avg": {
+        "precision": 0.9448194455715727,
+        "recall": 0.9434508688141449,
+        "f1-score": 0.9439148703553321,
+        "support": 19682.0
+      }
+    },
+    "confusion_matrix_tn_fp_fn_tp": [
+      13852,
+      693,
+      420,
+      4717
+    ],
+    "average_precision": 0.9448623232800912,
+    "roc_auc": 0.9819717064231063,
+    "review_fraction": 0.27487043999593536
+  },
+  "test": {
+    "threshold": 0.6249999999999999,
+    "classification": {
+      "0": {
+        "precision": 0.9664196387216304,
+        "recall": 0.9453296080948426,
+        "f1-score": 0.9557582929343055,
+        "support": 13243.0
+      },
+      "1": {
+        "precision": 0.8705293276108726,
+        "recall": 0.9179709598340562,
+        "f1-score": 0.893620927030748,
+        "support": 5303.0
+      },
+      "accuracy": 0.9375067399978432,
+      "macro avg": {
+        "precision": 0.9184744831662515,
+        "recall": 0.9316502839644494,
+        "f1-score": 0.9246896099825268,
+        "support": 18546.0
+      },
+      "weighted avg": {
+        "precision": 0.939000986730886,
+        "recall": 0.9375067399978432,
+        "f1-score": 0.9379908794011141,
+        "support": 18546.0
+      }
+    },
+    "confusion_matrix_tn_fp_fn_tp": [
+      12519,
+      724,
+      435,
+      4868
+    ],
+    "average_precision": 0.9417354134650204,
+    "roc_auc": 0.9800333711963992,
+    "review_fraction": 0.30152054351342605
+  },
+  "majority_baseline_test": {
+    "threshold": 0.5,
+    "classification": {
+      "0": {
+        "precision": 0.7140623315000539,
+        "recall": 1.0,
+        "f1-score": 0.8331812891251691,
+        "support": 13243.0
+      },
+      "1": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 5303.0
+      },
+      "accuracy": 0.7140623315000539,
+      "macro avg": {
+        "precision": 0.35703116575002697,
+        "recall": 0.5,
+        "f1-score": 0.41659064456258454,
+        "support": 18546.0
+      },
+      "weighted avg": {
+        "precision": 0.509885013267293,
+        "recall": 0.7140623315000539,
+        "f1-score": 0.5949433738749388,
+        "support": 18546.0
+      }
+    },
+    "confusion_matrix_tn_fp_fn_tp": [
+      13243,
+      0,
+      5303,
+      0
+    ],
+    "average_precision": 0.28593766849994606,
+    "roc_auc": 0.5,
+    "review_fraction": 0.0
+  },
+  "limitations": [
+    "Historical 2018 data; no evidence of current production performance.",
+    "Only normalized exact duplicates removed; near duplicates and product overlap may remain.",
+    "No demographic attributes used.",
+    "Scores are not calibrated probabilities.",
+    "No measured business impact or deployment validation."
+  ]
+}

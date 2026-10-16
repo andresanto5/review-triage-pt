@@ -1,0 +1,10 @@
+{
+  "run_ids": [
+    "10ce21f457d44990a9956d425620e4d2",
+    "00162f81eb444e05986de18c5fe3c8df",
+    "3044e2cc686c4f97bf6911f9a1b5046f"
+  ],
+  "tracking": "local SQLite",
+  "verified_status": "FINISHED",
+  "mlflow_version": "3.17.1"
+}

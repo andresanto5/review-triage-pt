@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    image: review-triage-pt:local
+    command: ["uvicorn", "api:app", "--app-dir", "src", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./src:/project/src:ro
+      - ./artifacts/baseline.joblib:/project/artifacts/baseline.joblib:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true

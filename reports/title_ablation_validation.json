@@ -1,0 +1,87 @@
+{
+  "protocol": "Validation-only ablation; thresholds selected and measured on validation, optimistic for model selection. Test not evaluated for either new model.",
+  "train_rows": 89111,
+  "validation_rows": 19403,
+  "body_overlap": 0,
+  "source_sha256": "821fb0bf9f7230b0fba4e4f9fadd75a66d1a9ff0b1657810791d33007eb2ab38",
+  "variants": {
+    "title_body": {
+      "threshold": 0.6249999999999999,
+      "classification": {
+        "0": {
+          "precision": 0.9712708746108123,
+          "recall": 0.9528635890315863,
+          "f1-score": 0.961979184917826,
+          "support": 14405.0
+        },
+        "1": {
+          "precision": 0.8711819389110226,
+          "recall": 0.9187675070028011,
+          "f1-score": 0.8943421949556919,
+          "support": 4998.0
+        },
+        "accuracy": 0.9440808122455291,
+        "macro avg": {
+          "precision": 0.9212264067609175,
+          "recall": 0.9358155480171937,
+          "f1-score": 0.9281606899367589,
+          "support": 19403.0
+        },
+        "weighted avg": {
+          "precision": 0.9454890624875556,
+          "recall": 0.9440808122455291,
+          "f1-score": 0.9445566381038928,
+          "support": 19403.0
+        }
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        13726,
+        679,
+        406,
+        4592
+      ],
+      "average_precision": 0.9449975382176136,
+      "roc_auc": 0.9822386990200453,
+      "review_fraction": 0.27165902180075246
+    },
+    "body_only": {
+      "threshold": 0.6249999999999999,
+      "classification": {
+        "0": {
+          "precision": 0.9592500884329678,
+          "recall": 0.9412703922249219,
+          "f1-score": 0.9501751927119831,
+          "support": 14405.0
+        },
+        "1": {
+          "precision": 0.8394077448747153,
+          "recall": 0.8847539015606243,
+          "f1-score": 0.8614845119812975,
+          "support": 4998.0
+        },
+        "accuracy": 0.9267123640674123,
+        "macro avg": {
+          "precision": 0.8993289166538415,
+          "recall": 0.9130121468927731,
+          "f1-score": 0.9058298523466404,
+          "support": 19403.0
+        },
+        "weighted avg": {
+          "precision": 0.9283800150884259,
+          "recall": 0.9267123640674123,
+          "f1-score": 0.9273294460598177,
+          "support": 19403.0
+        }
+      },
+      "confusion_matrix_tn_fp_fn_tp": [
+        13559,
+        846,
+        576,
+        4422
+      ],
+      "average_precision": 0.9172432895743807,
+      "roc_auc": 0.97245095886324,
+      "review_fraction": 0.2715044065350719
+    }
+  }
+}
